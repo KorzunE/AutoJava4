@@ -39,9 +39,9 @@ public class CardPositiveTest {
     @Test
     public void shouldSuccessCard() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Евгений Корзун");
-        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79991234567");
+        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+73211231234");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
-        driver.findElement(By.className("button.button")).click();
+        driver.findElement(By.cssSelector("button.button")).click();
         var actualTextElements = driver.findElement(By.cssSelector("[data-test-id=order-success]"));
         var actualText = actualTextElements.getText().trim();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", actualText);
